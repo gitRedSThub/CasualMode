@@ -1,0 +1,14 @@
+name: CasualMode
+description: Makes survival easier for selected casual players.
+version: '${project.version}'
+
+main: me.redst.casualMode.CasualMode
+api-version: '1.21.11'
+load: STARTUP
+
+authors: [ _RedST ]
+
+permissions:
+  casualmode.admin:
+    description: Change CasualMode settings, manage the casual playerlist, and reload the plugin.
+    default: op

@@ -1,0 +1,125 @@
+# Damage reduction for players in the CasualMode playerlist.
+# Every damage-received-percent is how much of the normal damage is actually received:
+# 100.00 = full damage, 50.00 = half damage, 0.00 = no damage.
+# Allowed values: 0.00 to 100.00, with up to 2 decimal places.
+damage-reduction:
+  # Enables or disables the entire damage reduction system.
+  enabled: true
+
+  # Damage received from mobs and monsters.
+  # 50.00 means the player receives 50% of the normal damage.
+  mobs:
+    damage-received-percent: 50.00
+
+  # Damage received from other players.
+  # Disabled by default, so player damage stays normal.
+  players:
+    enabled: false
+    damage-received-percent: 50.00
+
+  # Fall damage.
+  # Disabled by default, so fall damage stays normal.
+  fall:
+    enabled: false
+    damage-received-percent: 50.00
+
+  # Damage caused by projectiles such as arrows and tridents.
+  projectiles:
+    enabled: true
+    damage-received-percent: 50.00
+
+  # Damage caused by explosions such as creepers and TNT.
+  explosives:
+    enabled: true
+    damage-received-percent: 50.00
+
+  # Magic and potion-related damage.
+  magic:
+    enabled: true
+    damage-received-percent: 50.00
+
+
+# Automatically heals casual players when their health gets low.
+# Health is measured in health points: 20.00 is a full health bar of 10 hearts.
+auto-heal:
+  # Enables or disables AutoHeal.
+  enabled: true
+
+  # AutoHeal starts when health is below this value.
+  # Allowed values: 0.01 to 1000.00.
+  health-threshold: 10.00
+
+  # Amount of health restored each time. 2.00 is one heart.
+  # Nobody is ever healed above their maximum health.
+  # Allowed values: 0.01 to 1000.00.
+  heal-amount: 2.00
+
+  # Time between AutoHeal checks for each eligible player, in seconds.
+  # Allowed values: 1.00 to 3600.00.
+  interval: 4.00
+
+
+# Gives CasualMode effects to animals tamed by casual players.
+pets:
+  # Enables or disables the pet system.
+  enabled: true
+
+  # false = pets use their owner's settings.
+  # true = pets use the separate settings below.
+  use-own-settings: false
+
+  # Pet settings, used only when use-own-settings is true.
+  # They work exactly like the player settings above.
+  settings:
+    damage-reduction:
+      enabled: true
+
+      mobs:
+        damage-received-percent: 50.00
+
+      players:
+        enabled: false
+        damage-received-percent: 50.00
+
+      fall:
+        enabled: false
+        damage-received-percent: 50.00
+
+      projectiles:
+        enabled: true
+        damage-received-percent: 50.00
+
+      explosives:
+        enabled: true
+        damage-received-percent: 50.00
+
+      magic:
+        enabled: true
+        damage-received-percent: 50.00
+
+    auto-heal:
+      enabled: true
+      health-threshold: 10.00
+      heal-amount: 2.00
+      interval: 4.00
+
+
+# Changes the color of casual players' names in the player list.
+color-name:
+  # Enables or disables the colored name.
+  enabled: true
+
+  # Minecraft text color used for casual players.
+  # Colors: BLACK, DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED, DARK_PURPLE, GOLD, GRAY,
+  # DARK_GRAY, BLUE, GREEN, AQUA, RED, LIGHT_PURPLE, YELLOW, WHITE.
+  color: GREEN
+
+
+# Players who receive CasualMode. Names are not case-sensitive,
+# and players do not need to be online to be added.
+# Each name is linked to the account that uses it when that player joins,
+# so a different player who later takes the same name does not receive CasualMode.
+player-list:
+  - Steve
+  - Alex
+  - JohnPork
